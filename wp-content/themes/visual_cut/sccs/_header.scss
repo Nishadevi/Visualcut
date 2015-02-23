@@ -1,0 +1,103 @@
+#header{
+	padding: 12px 0 8px;
+	.logo{
+		margin: 0 0 0 8px;
+		img{display: block;}
+		@include breakpoint($tablet) {
+			width: 280px;
+		}
+		@include breakpoint($mobile) {
+			width: 200px;
+		}
+	}
+	.navbar-nav{
+		padding: 24px 0 0;
+		margin-right: -33px;
+		@include breakpoint($mobile) {
+			margin: 0;
+		}
+	}
+	.navbar{border: none;}
+}
+.navbar-collapse {
+	border: none;
+	box-shadow: none;
+	&.collapse {
+		padding:0;
+	}
+	.dropdown-menu{
+		background:$nav-link-hover-bg;
+		text-transform: uppercase;
+		font-size: 18px;
+		line-height: 1.5;
+		min-width: 100%;
+		border: none;
+		padding: 24px 0 0;
+		>li{
+			>a{
+				padding: 5px 15px;
+			}
+		}
+		@include breakpoint($tablet) {
+			font-size: 14px;
+			line-height: 1.5;
+		}
+		@include breakpoint($mobile) {
+			padding: 0;
+		}
+	}
+	.open{
+		>a{
+			color: $white;
+		}
+		@include breakpoint($mobile) {
+			.dropdown-menu{
+				padding-bottom: 10px;
+				>li{
+					>a{
+						padding: 5px 15px;
+					}
+				}
+			}
+		}
+	}
+	@include breakpoint($mobile) {
+		text-align: center;
+		padding: 0;
+		.open{
+			.dropdown-menu{
+				background:$nav-link-hover-bg;
+				text-align: center;
+			}
+		}
+	}
+}
+.navbar-nav {
+	font: 16px/1.4 $font-family-oswald;
+	a{
+		@include transition(.3s);
+	}
+	>li{
+		>a{
+			padding: 18px 33px 18px;
+			color: $gray-light;
+			&:hover{
+				color: $white;
+			}
+		}
+	}
+	@include breakpoint($tablet) {
+		font-size: 14px;
+		>li{
+			>a{
+				padding: 10px 20px 12px;
+			}
+		}
+	}
+}
+.navbar-toggle {
+	border-color: $brand-primary;
+	.icon-bar {
+		background: $brand-primary;
+	}
+}

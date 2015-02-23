@@ -1,0 +1,236 @@
+#page{
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	height:100%;
+	display:table;
+	table-layout: fixed;
+	background: url(../images/bg-body.jpg) no-repeat;
+	background-size: cover;
+}
+html{height:100%;}
+body{height:100%;}
+.visual-block{
+	padding: 30px 0;
+	min-height: 314px;
+	background: url(../images/bg-slider.jpg) no-repeat 50% 100%;
+	font-size: 14px;
+	line-height: 1.5;
+	mark{
+		color: $white;
+		padding: 0;
+	}
+	h1{
+		text-transform: uppercase;
+		font: 700 34px/1.4 $font-family-oswald;
+		margin-bottom: 7px;
+		color: $link-hover-color;
+	}
+	.btn{
+		margin-top: 38px;
+	}
+	@include breakpoint($mobile) {
+		min-height: 0;
+		.btn{
+			margin: 0;
+		}
+		h1{
+			font-size: 20px;
+			line-height: 1.4;
+		}
+	}
+}
+.intro{
+	margin-bottom: 73px;
+	img{display: block;}
+}
+#content{
+	background: rgba(0,0,0,.4);
+	padding: 22px 15px 34px;
+	margin-bottom: 53px;
+	&.services{
+		margin-bottom: 150px;
+		@include breakpoint($mobile) {
+			margin-bottom: 50px;
+		}
+	}
+}
+.services{
+	.header{
+		border-bottom: 2px solid #505150;
+		margin-bottom: 21px;
+	}
+	.holder{
+		overflow: hidden;
+	}
+	.block{
+		overflow: hidden;
+		margin-bottom: -16px;
+		@include breakpoint($tablet) {
+			margin-bottom: 15px;
+		}
+	}
+	h1{
+		margin-bottom: 8px;
+		font-family: $font-family-sans-serif;
+		letter-spacing: 1px;
+	}
+	.add-nav{
+		float: left;
+		font-size: 14px;
+		line-height: 1.4;
+		width: 55%;
+		ul{
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+		a{
+			@include transition(.3s);
+			&:hover{text-decoration: none;}
+		}
+		li{
+			list-style: none;
+			position: relative;
+			margin: 0 12px 0 0;
+			float: left;
+			padding-left: 14px;
+			&:before{
+				content:"";
+				position: absolute;
+				top:3px;
+				left:0;
+				height: 14px;
+				border-left: 1px solid #d3d3d3;
+			}
+			&:first-child{
+				padding-left: 6px;
+				&:before{display: none;}
+			}
+		}
+		@include breakpoint($desktop-md) {
+			width: 65%;
+		}
+		@include breakpoint($tablet) {
+			width: 100%;
+			float: none;
+		}
+		@include breakpoint($mobile) {
+			li{
+				margin-right: 5px;
+				padding-left: 6px;
+			}
+		}
+		@include breakpoint($mobile-small) {
+			li{
+				float: none;
+				text-align: center;
+				padding: 0 0 2px;
+				margin: 0;
+				a{display: block;}
+				&:before{
+					display: none;
+				}
+			}
+		}
+	}
+	.thumb{
+		float: right;
+		width: 42.5%;
+		margin: 0;
+		padding: 10px 0 0 0;
+		overflow: hidden;
+		letter-spacing: -4px;
+		li{
+			list-style: none;
+			display: inline-block;
+			vertical-align: top;
+			padding: 0 17px 15px 19px;
+			letter-spacing: normal;
+			@include transition(.3s);
+			&:hover{
+				opacity: 0.8;
+			}
+		}
+		@include breakpoint($desktop-md) {
+			width: 35%;
+			li{
+				width: 33.33%;
+				padding: 0 10px 10px;
+			}
+		}
+		@include breakpoint($tablet) {
+			width: 100%;
+			float: none;
+			li{
+				width: auto;
+			}
+		}
+		@include breakpoint($mobile-small) {
+			li{
+				width: 33.33%;
+				padding: 0 5px 5px;
+				img{width: 100%;}
+			}
+		}
+	}
+}
+.icon{
+	font-family: $font-family-pictograms;
+	padding: 0 7px;
+}
+.info-block{
+	padding: 10px 8px;
+	h1{
+		font-weight: 700;
+		margin-bottom: 30px;
+	}
+	p{
+		margin-bottom: 19px;
+	}
+	address{
+		margin-top: -20px;
+	}
+	@include breakpoint($mobile) {
+		padding: 10px 0 0;
+	}
+}
+address{
+	font-style: normal;
+	margin: 0 0 15px;
+	span{display: block;}
+}
+.contact-form{
+	max-width: 765px;
+	border-top: 2px solid $input-border;
+	padding: 46px 12px 0 16px;
+	margin: 0 -8px;
+	.form-group{
+		overflow: hidden;
+		margin-bottom: 17px;
+	}
+	.col-holder{
+		margin: 0 -9px 17px -10px;
+	}
+	.col{
+		float: left;
+		width: 50%;
+		padding: 0 9px 0 10px;
+		&:first-child{margin-left: 0;}
+	}
+	.btn-holder{
+		padding: 21px 0 22px;
+	}
+	@include breakpoint($mobile) {
+		padding: 30px 0 0 0;
+		margin: 0;
+		.col-holder{
+			margin: 0;
+		}
+		.col{
+			float: none;
+			padding: 0 0 17px;
+			width: 100%;
+		}
+	}
+}

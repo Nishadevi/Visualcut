@@ -1,0 +1,9 @@
+// breakpoints
+$desktop: min-width 993px; 	// for more than 992px width
+$desktop-tablet: min-width 768px; // for more than 768px width
+$desktop-lg: 1600px;
+$desktop-md: 1400px;
+$tablet: 992px; 				// tablet
+$mobile: 767px; 				// mobile
+$mobile-small: 479px;				// mobile-small
+$mobile-hi-res: 767px (min-resolution 1.5dppx);  // mobile retina

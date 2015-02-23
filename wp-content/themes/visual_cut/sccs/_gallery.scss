@@ -1,0 +1,219 @@
+.gallery{
+	img{
+		display: block;
+	}
+	.img-holder{position: relative;}
+	.visual-block{
+		font-size: 16px;
+		line-height: 1.4;
+		h1{
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 45px 16px 0;
+		}
+	}
+	.thumbnail-list{
+		margin: 0;
+		padding: 0;
+		position: absolute;
+		bottom:37px;
+		left:3%;
+		letter-spacing: -4px;
+		z-index: 20;
+		overflow: hidden;
+		li{
+			list-style: none;
+			float: left;
+			margin: 0 10px 10px;
+			border-width: 2px;
+		}
+		a{
+			display: block;
+			@include transition(.3s);
+			&:hover{
+				opacity: 0.5;
+			}
+		}
+	}
+	@include breakpoint($tablet) {
+		.visual-block{
+			h1{
+				display: block;
+				margin: 0 0 5px 0;
+			}
+		}
+		.thumbnail-list{
+			bottom:0;
+			li{
+				width: 150px;
+			}
+		}
+	}
+	@include breakpoint($mobile) {
+		.thumbnail-list{
+			bottom: -60px;
+			left:0;
+			width: 100%;
+			padding: 10px 0 0;
+			text-align: center;
+			li{
+				width: 80px;
+				float: none;
+				display: inline-block;
+				vertical-align: top;
+			}
+		}
+		.visual-block{
+			padding-top:60px;
+		}
+	}
+}
+.carousel-indicators{
+	bottom:12px;
+	margin: 0 0 0 -30%;
+	text-shadow: none;
+	letter-spacing: -4px;
+	@include breakpoint($mobile-small) {display: none;}
+	li{
+		width: 20px;
+		height: 20px;
+		border-width: 2px;
+		border-radius: 50%;
+		vertical-align: top;
+		margin: 0 3px;
+	}
+	.active{
+		width: 20px;
+		height: 20px;
+		margin: 0 3px;
+		border-color: $brand-primary;
+	}
+}
+.carousel-fade {
+	.carousel-inner {
+		.item {
+			opacity: 0;
+			@include transition(opacity .4s);
+		}
+		.active {
+			opacity: 1;
+		}
+	}
+	.active.left,
+	.active.right {
+		left: 0;
+		opacity: 0;
+		z-index: 1;
+	}
+}
+.carousel-control{
+	width: 31px;
+	z-index: 20;
+	bottom:auto;
+	&.left,
+	&.right{
+		background: none;
+		opacity: 0.4;
+		@include transition(.3s);
+		&:hover{
+			opacity: 1;
+		}
+	}
+	img{
+		position: absolute;
+		top:50%;
+		width: 31px;
+		height: 34px;
+		margin: -15px 0 0 11px;
+	}
+	&.right{
+		img{
+			margin-left: -11px;
+		}
+	}
+	@include breakpoint($mobile) {
+		img{
+			width: 15px;
+			margin-left: 4px;
+		}
+		&.right{
+			img{
+				margin-left: 4px;
+			}
+		}
+	}
+}
+.carousel-caption{
+	text-align: right;
+	text-transform: uppercase;
+	font:900 24px/1.4 $font-family-sans-serif;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	top:0;
+	letter-spacing: 1px;
+	padding: 0;
+	.holder{
+		position: absolute;
+		top:50%;
+		left:5%;
+		right: 60%;
+		-moz-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		-webkit-transform: translateY(-50%);
+		transform: translateY(-50%);
+	}
+	h1{
+		font:900 72px/1.2 $font-family-sans-serif;
+		margin: 0 0 -4px 0;
+	}
+	p{
+		margin: 0 0 4px;
+	}
+	@include breakpoint($desktop-lg) {
+		h1{
+			font-size: 55px;
+			line-height: 1.2;
+		}
+	}
+	@include breakpoint($desktop-md) {
+		font-size: 16px;
+		line-height: 1.4;
+		h1{
+			font-size: 40px;
+			line-height: 1.2;
+		}
+	}
+	@include breakpoint($tablet) {
+		font-size: 13px;
+		line-height: 1.4;
+		h1{
+			font-size: 30px;
+			line-height: 1.2;
+		}
+	}
+	@include breakpoint($mobile) {
+		font-size: $font-size-base;
+		line-height: $line-height-base;
+		text-align: center;
+		text-shadow: 3px 3px 1px #000;
+		left:10%;
+		right: 10%;
+		h1{
+			font-size: 30px;
+			line-height: 1.2;
+		}
+		.holder{
+			width: 100%;
+			left:0;
+			right: 0;
+		}
+	}
+	@include breakpoint($mobile-small) {
+		h1{
+			font-size: 24px;
+			line-height: 1.2;
+		}
+	}
+}

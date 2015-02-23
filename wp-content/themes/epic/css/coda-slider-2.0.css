@@ -1,0 +1,172 @@
+/*
+	jQuery Coda-Slider v2.0 - http://www.ndoherty.biz/coda-slider
+	Copyright (c) 2009 Niall Doherty
+	This plugin available for use in all personal or commercial projects under both MIT and GPL licenses.
+*/
+
+/* Most common stuff you'll need to change */
+
+	.coda-slider-wrapper { padding: 0px 0 }
+	
+	/* Use this to keep the slider content contained in a box even when JavaScript is disabled */
+	.coda-slider-no-js .coda-slider { height: 150px; overflow: auto !important; padding-right: 20px }
+	
+	/* Change the width of the entire slider (without dynamic arrows) */
+	.coda-slider, .coda-slider .panel { 
+		width: 960px; 
+	} 
+	
+	/* Change margin and width of the slider (with dynamic arrows) */
+	.coda-slider-wrapper.arrows .coda-slider, .coda-slider-wrapper.arrows .coda-slider .panel { 
+		width: 820px;
+	}
+	
+	.coda-slider-wrapper.arrows .coda-slider { 
+		margin: 0px 10px; 
+	}
+	
+	/* Arrow styling */
+	.coda-nav-left a {
+		font-size: 12px;
+		font-family:'Arimo', arial, sans-serif;
+		padding:8px 15px 7px 15px;
+		color: #666666;
+		background-color:#ffffff;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e4e4'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e4e4)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  #ffffff,  #e5e4e4); /* for firefox 3.6+ */ 
+		border: 1px #cccccc solid;
+		text-shadow:0 0 0 transparent, 0 1px 0px #ffffff;
+		-moz-box-shadow: 0 1px 0px #ffffff;
+		-webkit-box-shadow: 0 1px 0px #ffffff;
+		-webkit-border-radius:14px 14px 14px 14px;
+		-moz-border-radius:14px 14px 14px 14px;
+		border-radius:14px 14px 14px 14px;
+		height:18px;
+		width:24px;
+	}	
+	.coda-nav-left a:hover {
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d7d6d6'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#d7d6d6)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  #ffffff,  #d7d6d6); /* for firefox 3.6+ */ 
+	}	
+		.coda-nav-right a {
+		font-size: 12px;
+		font-family:'Arimo', arial, sans-serif;
+		padding:8px 15px 7px 15px;
+		color: #666666;
+		background-color:#ffffff;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e4e4'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e4e4)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  #ffffff,  #e5e4e4); /* for firefox 3.6+ */ 
+		border: 1px #cccccc solid;
+		text-shadow:0 0 0 transparent, 0 1px 0px #ffffff;
+		-moz-box-shadow: 0 1px 0px #ffffff;
+		-webkit-box-shadow: 0 1px 0px #ffffff;
+		-webkit-border-radius:14px 14px 14px 14px;
+		-moz-border-radius:14px 14px 14px 14px;
+		border-radius:14px 14px 14px 14px;
+		height:18px;
+		width:24px;
+	}
+	.coda-nav-right a:hover {
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#d7d6d6'); /* for IE */
+		background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#d7d6d6)); /* for webkit browsers */
+		background: -moz-linear-gradient(top,  #ffffff,  #d7d6d6); /* for firefox 3.6+ */ 
+	}		
+	/* Tab nav */
+	.coda-nav ul li a.current { background:url(../images/bullets.png) no-repeat; background-position:0 -22px; }
+	
+	/* Panel padding */
+	.coda-slider .panel-wrapper {
+		font-size:24px;
+		font-family: 'Oswald', arial, sans-serif;
+		color:#777777;
+		padding-left:10px;
+		padding-right:10px;
+		text-shadow:0 0 0 transparent,#000000 0px 1px 0px;
+	}
+	
+	/* Preloader */
+	.coda-slider p.loading { 
+		padding: 20px; 
+		text-align: center; 
+	}
+
+/* Don't change anything below here unless you know what you're doing */
+
+	/* Tabbed nav */
+	.coda-nav ul { clear: both; display: block; margin: auto; overflow: hidden; padding:0; }
+	.coda-nav ul li { display: inline }
+	.coda-nav ul li a { background:url(../images/bullets.png) no-repeat;  display: block; float: left; 	width:22px; height:22px; text-decoration: none; text-indent:-9999px; }
+	
+	/* Miscellaneous */
+	.coda-slider-wrapper { 
+		clear: both; 
+		overflow: auto; 
+	}
+	.coda-slider { 
+		float: left; 
+		overflow: hidden; 
+		position: relative; 
+	}
+	.coda-slider .panel { 
+		display: block; 
+		float: left; 
+	}
+	.coda-slider .panel-container { 
+		position: relative; 
+	}
+	.coda-nav-left, .coda-nav-right { 
+		float: left; 
+	}
+	.coda-nav-left a, .coda-nav-right a { 
+		display: block; 
+		text-align: center; 
+		text-decoration: none; 
+	}
+	.panel h3 {
+		color:#ffffff;
+		text-shadow:0 0 0 transparent,#000000 0px 1px 0px;
+	}
+	.panel p {
+		color:#cccccc;
+	}
+	.panel .highlight.button{
+		-moz-box-shadow: 0 1px 3px #000000;
+		-webkit-box-shadow: 0 1px 3px #000000;
+	}
+	.panel .normal.button{
+		-moz-box-shadow: 0 1px 3px #000000;
+		-webkit-box-shadow: 0 1px 3px #000000;
+	}
+	.backgroundgradient4 {
+		background-image:url(../images/background4.jpg);
+		background-position:top center;
+		background-repeat:no-repeat;
+		padding-top:40px;
+		padding-bottom:20px;
+		background-color:#ffffff;
+	}
+	.codabox{
+		padding:15px;
+		text-shadow:#000000 0px 1px 0px;
+		/* Fallback for web browsers that doesn't support RGBa */
+		background: rgb(0, 0, 0);
+		/* RGBa with 0.6 opacity */
+		background: rgba(0, 0, 0, .6);
+		width:300px;
+		box-shadow: 0px 2px 2px #000000;
+		-webkit-border-radius:6px 6px 26px 6px;
+		-moz-border-radius:6px 6px 26px 6px;
+		border-radius:6px 6px 26px 6px;		
+	}
+	.shadowcoda{
+		height:468px;
+		width:930px; 
+		margin-bottom:0px; 
+		background-image:url(../images/shadow_header.png);
+		background-repeat:no-repeat;
+		background-position: bottom center;
+		position: relative;
+	}				

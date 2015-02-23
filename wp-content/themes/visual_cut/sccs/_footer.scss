@@ -1,0 +1,38 @@
+#footer{
+	background:$black;
+	width:100%;
+	display:table-footer-group;
+	height:1%;
+	.footer-holder{
+		padding-top: 49px;
+		padding-bottom: 20px;
+	}
+	a{
+		@include transition(.3s);
+		&:hover{text-decoration: none;}
+	}
+	.sub-nav{
+		.nav{
+			margin-right: -5px;
+		}
+		li{
+			a{
+				padding: 0 15px;
+			}
+		}
+	}
+	@include breakpoint($mobile) {
+		text-align: center;
+		.sub-nav{
+			.nav{
+				margin-right: 0;
+			}
+			li{
+				float: none;
+				display: inline-block;
+				vertical-align: top;
+				margin: 0 0 5px;
+			}
+		}
+	}
+}

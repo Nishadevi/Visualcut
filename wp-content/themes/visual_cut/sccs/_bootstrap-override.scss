@@ -1,0 +1,89 @@
+// custom variables
+
+$gray-darker: #191919;
+$gray: #666;
+$gray-light: #acacac;
+$white: #fff;
+$black: #000;
+
+$base-min-width:320px;
+
+$container-large-desktop: 1200px;
+
+$brand-primary: #018bc0;
+
+$font-size-small: 11px;
+
+$border-radius-base: 0;
+
+$padding-base-vertical: 14px;
+$padding-base-horizontal: 20px;
+$padding-large-vertical: 12px;
+$padding-large-horizontal: 25px;
+
+$text-color: $white;
+$body-bg: $gray-darker;
+
+$blockquote-font-size: inherit;
+
+$link-color: $white;
+$link-hover-color: $brand-primary;
+
+$font-size-base: 12px;
+$line-height-base: 1.5;
+$font-family-sans-serif: Arial, Helvetica, sans-serif;
+$font-family-oswald: 'Oswald', Arial, Helvetica, sans-serif;
+$font-family-pictograms: 'modern_pictogramsnormal';
+
+// input
+
+$input-bg: transparent;
+$input-border: #4d4d4f;
+$input-height-base: 84px;
+$input-color: $white;
+$input-color-placeholder: inherit;
+
+// headings
+
+$headings-font-family: $font-family-oswald;
+$font-size-h1: floor(($font-size-base * 2.5)); // ~30px
+$font-size-h2:floor(($font-size-base * 1.7)); // ~20px
+$font-size-h3: floor(($font-size-base * 1.5)); // ~18px
+$font-size-h4: floor(($font-size-base * 1.2)); // ~14px
+$font-size-h5: $font-size-base; // ~12px
+$font-size-h6: ceil(($font-size-base * 0.9)); // ~10px
+
+// navbar
+
+$navbar-height: auto;
+$navbar-border-radius: 0;
+$navbar-default-border: transparent;
+$navbar-collapse-max-height: auto;
+$nav-link-padding: 15px 33px;
+$nav-link-hover-bg: rgba(0,0,0,.85);
+$dropdown-bg: rgba(0,0,0,.85);
+$dropdown-link-color:$white;
+$navbar-margin-bottom:0;
+
+//== Carousel
+
+$carousel-text-shadow: 5px 5px 1px #000;
+$carousel-indicator-active-bg:transparent;
+$carousel-control-opacity:1;
+$carousel-indicator-border-color:#000;
+
+//== Thumbnails
+$thumbnail-padding:0;
+$thumbnail-border:#7f7f7f;
+
+@font-face {
+	font-family: 'modern_pictogramsnormal';
+	src: url('../fonts/modernpics.eot');
+	src: url('../fonts/modernpics.eot?#iefix') format('embedded-opentype'),
+		 url('../fonts/modernpics.woff2') format('woff2'),
+		 url('../fonts/modernpics.woff') format('woff'),
+		 url('../fonts/modernpics.ttf') format('truetype'),
+		 url('../fonts/modernpics.svg#modern_pictogramsnormal') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
